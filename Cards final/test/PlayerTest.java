@@ -4,6 +4,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
 
+    /**
+     * Tests the logFileName method of the Player class.
+     * Verifies that the method correctly generates the log file name for a player.
+     */
     @Test
     void logFileName() {
         CardGame game = new CardGame(4);
@@ -12,7 +16,11 @@ class PlayerTest {
         String expected = "player" + playerId + "_output.txt";
         assertEquals(expected, player.logFileName());
     }
-
+    /**
+     * Tests the addCard method of the Player class.
+     * Verifies that cards are correctly added to the player's hand and 
+     * that the hand is correctly logged.
+     */
     @Test
     void addCard() {
         CardGame game = new CardGame(4);
@@ -24,6 +32,10 @@ class PlayerTest {
         assertEquals(expected, player.logPlayer());
     }
 
+    /**
+     * Tests the isWin method of the Player class.
+     * Verifies that the method correctly identifies winning and non-winning conditions.
+     */
     @Test
     void isWin() {
         CardGame game = new CardGame(4);
@@ -49,7 +61,10 @@ class PlayerTest {
         player.addCard(new Card(1));
         assertTrue(player.isWin());
     }
-
+    /**
+     * Tests the turn method of the Player class.
+     * Verifies that a player's turn (drawing and discarding cards) is correctly executed and logged.
+     */
     @Test
     void turn() {
         CardGame game = new CardGame(4);
@@ -75,6 +90,10 @@ class PlayerTest {
         assertTrue(player.isWin());
     }
 
+    /**
+     * Tests the doStart method of the Player class.
+     * Verifies that the initial hand of the player is correctly logged.
+     */
     @Test
     void doStart() {
         CardGame game = new CardGame(4);
@@ -90,7 +109,10 @@ class PlayerTest {
         String expected = "player " + playerId + " initial hand 1 1 2 3";
         assertEquals(expected, player.logActions());
     }
-
+    /**
+     * Tests the doWin method of the Player class.
+     * Verifies that winning the game is correctly logged.
+     */
     @Test
     void doWin() {
         CardGame game = new CardGame(4);
@@ -107,6 +129,10 @@ class PlayerTest {
         assertEquals(expected, player.logActions());
     }
 
+    /**
+     * Tests the doWinInform method of the Player class.
+     * Verifies that players are correctly informed about another player's win.
+     */
     @Test
     void doWinInform() {
         CardGame game = new CardGame(4);
@@ -128,6 +154,10 @@ class PlayerTest {
         assertEquals(expected, player.logActions());
     }
 
+    /**
+     * Tests the doExit method of the Player class.
+     * Verifies that the player's exit and final hand are correctly logged.
+     */
     @Test
     void doExit() {
         CardGame game = new CardGame(4);
