@@ -4,6 +4,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CardDeckTest {
 
+    /**
+     * This test verifies the logFileName method of the CardDeck class.
+     * It checks if the log file name generated for a card deck matches the expected format.
+     */
     @Test
     void logFileName() {
         int deckId = 3;
@@ -12,6 +16,10 @@ class CardDeckTest {
         assertEquals(expected, deck.logFileName());
     }
 
+    /**
+     * This test checks the getContents method of the CardDeck class.
+     * It verifies that the method correctly returns a string representation of the cards in the deck.
+     */
     @Test
     void getContents() {
         int deckId = 3;
@@ -24,6 +32,10 @@ class CardDeckTest {
         assertEquals(expected, deck.getContents());
     }
 
+    /**
+     * This test ensures that the drawCard method of the CardDeck class functions correctly.
+     * It tests both the successful drawing of cards and the throwing of an exception when the deck is empty.
+     */
     @Test
     void drawCard() {
         int deckId = 3;
@@ -42,6 +54,10 @@ class CardDeckTest {
         assertEquals("Empty deck "+deckId, e.getMessage());
     }
 
+    /**
+     * This test verifies the discardCard method of the CardDeck class.
+     * It checks if cards are correctly added to the deck and can be drawn in the correct order.
+     */
     @Test
     void discardCard() {
         int deckId = 3;

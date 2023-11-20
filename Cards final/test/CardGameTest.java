@@ -106,6 +106,11 @@ class CardGameTest {
             "4\n" +
             "1";
 
+    /**
+     * Tests the loadInputData method of the CardGame class.
+     * This test verifies that the method correctly processes valid input data 
+     * and throws GamePlayExceptions with appropriate messages for invalid data.
+     */
     @Test
     void loadInputData() throws IOException {
         String[] files = {TEST_01, TEST_02};
@@ -135,6 +140,10 @@ class CardGameTest {
         assertNull(thrown);
     }
 
+    /**
+     * Tests the winReport method of the CardGame class.
+     * It verifies that the game correctly reports a player's win and informs other players.
+     */
     @Test
     void winReport() {
         int playerCount = 4;
@@ -159,6 +168,11 @@ class CardGameTest {
         }
     }
 
+    /**
+     * Tests the turn method of the CardGame class.
+     * It verifies that a player's turn is executed correctly, 
+     * including drawing and discarding cards and checking for a win.
+     */ 
     @Test
     void turn() {
         CardGame game = new CardGame(4);
