@@ -25,6 +25,14 @@ public class CardDeck {
     }
 
     /**
+    * Method to get the id of the deck.
+    * @return deckId
+    */
+    public int getDeckId() {
+        return deckID;
+    }
+
+    /**
      * The method retrieves a String for initial text output.
      * @return String such as 'deck + deckID'
      */
